@@ -157,7 +157,8 @@ function downloadPDF() {
             orientation: "portrait"
         },
         pagebreak: {
-            mode: ["avoid-all", "css", "legacy"]
+            mode: ["css"],
+            avoid: ["h1", "h2", "h3", "li", "tr", "img"]
         }
     };
 

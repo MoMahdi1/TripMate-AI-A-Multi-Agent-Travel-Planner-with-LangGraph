@@ -21,6 +21,13 @@
     <main class="app-container">
 
         <section class="hero-section">
+            <div class="globe-wrap" aria-hidden="true">
+                <div class="globe"></div>
+                <div class="plane-track">
+                    <span class="plane-icon">✈️</span>
+                </div>
+            </div>
+
             <div class="badge">
                 ✈️ TripMate AI — A Multi-Agent Travel Planner with LangGraph
             </div>
@@ -40,7 +47,7 @@
                 <div>
                     <h2>Where do you want to go?</h2>
                     <p>
-                        Example: Plan a complete 5 days Dubai trip from Cairo under 30,000 EGP.
+                        Example: Plan a complete 5 days Dubai trip from Cairo under 1,000 USD.
                     </p>
                 </div>
 
@@ -53,7 +60,7 @@
             <div class="input-area">
                 <textarea
                     id="userInput"
-                    placeholder="Plan a complete 5 days Dubai trip including flights, hotels and sightseeing under 30,000 EGP..."
+                    placeholder="Plan a complete 5 days Dubai trip including flights, hotels and sightseeing under 1,000 USD..."
                 ></textarea>
 
                 <button id="sendBtn" onclick="sendMessage()">
