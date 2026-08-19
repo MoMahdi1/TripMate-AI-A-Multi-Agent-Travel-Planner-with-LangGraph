@@ -84,10 +84,10 @@ client = MultiServerMCPClient(
         
         "weather": {
             "transport" : "stdio",
-            "command" : r"C:\Users\H .S\.conda\envs\travel-agent\python.exe",
+            "command" : sys.executable,
             
             "args" : [
-                r"E:\Multi-Agent\TripMate-AI-A-Multi-Agent-Travel-Planner-with-LangGraph\custom_weather_mcp_server.py"
+                "custom_weather_mcp_server.py"
             ],
              "env": {
                  "OPENWEATHER_API_KEY" : OPENWEATHER_API_KEY
