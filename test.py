@@ -1,14 +1,26 @@
-from tools.tavily_tool import tavily_search
-from tools.flight_tool import search_flights
-from backend import run_travel_agent
+import os
+from dotenv import load_dotenv
+from groq import Groq
 
-user_input = input("Enter travel request: ")
+load_dotenv()
 
-response = run_travel_agent(
-    user_input=user_input,
-    thread_id="test_user"
-)
+api_key = os.getenv("GROQ_API_KEY")
 
+print("API KEY EXISTS:", bool(api_key))
 
-print("\nFINAL RESPONSE:\n")
-print(response['answer'])
+if not api_key:
+    raise ValueError("GROQ_API_KEY not found in .env")
+
+client = Groq(api_key=api_key)
+
+try:
+    models = client.models.list()
+
+    print("\nAvailable models:\n")
+
+    for model in models.data:
+        print(model.id)
+
+except Exception as e:
+    print("\nGROQ ERROR:")
+    print(e)
